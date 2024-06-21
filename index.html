@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textgenerierung erkennen</title>
+</head>
+<body>
+  <div id="content">
+    <p id="generatedText">Ein Beispieltext, der von einer KI generiert wurde.</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var generatedText = document.getElementById('generatedText').textContent;
+      
+      if (generatedText.includes('generiert von')) {
+        document.getElementById('content').innerHTML += '<p>Der Text wurde von ChatGPT generiert.</p>';
+      } else {
+        document.getElementById('content').innerHTML += '<p>Der Text wurde nicht von ChatGPT generiert.</p>';
+      }
+    });
+  </script>
+</body>
+</html>
